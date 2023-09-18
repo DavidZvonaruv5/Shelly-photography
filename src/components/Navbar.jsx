@@ -13,7 +13,7 @@ export default function Navbar() {
  
 
   return (
-    <nav className="bg-[#010101] text-white py-2 w-full shadow-2xl relative">
+    <nav className="bg-[#010101] text-white py-2 w-full fixed inset-x-0 top-0 z-20 shadow-2xl ">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
         <Link href="/">
           <div className="text-xl lg:text-3xl font-bold cursor-pointer flex-shrink-0 lg:ml-4">
