@@ -11,7 +11,7 @@ import SwiperCore,{autoplay} from 'swiper'
 
 export default function Banner() {
 
-  const images = ["/1.jpg", "/2.jpg", "/3.jpg"]
+  const images = ["/8.jpg", "/6.jpg", "/3.jpg","/7.jpg"]
   SwiperCore.use([Autoplay])
 
   return (
@@ -26,7 +26,7 @@ export default function Banner() {
       slidesPerView={1}
           navigation
           autoplay={{
-            delay: 7500
+            delay: 5000
           }}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
@@ -38,7 +38,7 @@ export default function Banner() {
         {images.map((img, index) => (
      
       <SwiperSlide key={index} className="min-w-full h-full flex-none">
-        <img src={images[index]} className='w-full h-full object-fill'></img>
+        <img src={images[index]} className='w-full h-full object-cover'></img>
       </SwiperSlide>
         ))}
           </Swiper>
