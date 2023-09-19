@@ -13,7 +13,7 @@ export default function Navbar() {
  
 
   return (
-    <nav className="bg-transperent text-white py-2 w-full fixed inset-x-0 top-0 z-20  ">
+    <nav className="bg-black text-white py-2 w-full  inset-x-0 top-0 z-20 shadow-2xl ">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
         <Link href="/">
           <div className="text-xl lg:text-3xl font-bold cursor-pointer flex-shrink-0 lg:ml-4">
@@ -41,12 +41,12 @@ export default function Navbar() {
                   }}
                   className="cursor-pointer hover:text-gray-300 text-xl"
                 >
-                  About Me
+                  About
                 </span>
               </Link>
             </li>
             <li>
-              <Link href={`/contact`}>
+              <Link href="/#contact">
                 <span
                   onClick={() => setIsOpen(false)}
                   className="cursor-pointer hover:text-gray-300 text-xl"
@@ -62,11 +62,11 @@ export default function Navbar() {
             <Link href="/#Aboutme">
               <span
                 onClick={() => {
-                  // Whatever you want to happen on click
+
                 }}
                 className="cursor-pointer hover:text-gray-300 text-xl"
               >
-                About Me
+                About
               </span>
             </Link>
           </li>
