@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // Corrected the import
+import { useRouter } from "next/navigation"; 
 import "../globals.css";
 
 export default function Contact() {

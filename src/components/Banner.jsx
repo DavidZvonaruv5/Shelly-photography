@@ -1,6 +1,6 @@
 
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
-
+ 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -38,7 +38,7 @@ export default function Banner() {
         {images.map((img, index) => (
      
       <SwiperSlide key={index} className="min-w-full h-full flex-none">
-        <img src={images[index]} className='w-full h-full object-cover'></img>
+        <img src={images[index]} className='w-full h-full object-scale-down sm:object-cover'></img>
       </SwiperSlide>
         ))}
           </Swiper>
