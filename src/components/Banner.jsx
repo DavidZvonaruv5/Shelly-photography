@@ -7,7 +7,7 @@ import 'swiper/css/scrollbar';
 import SwiperCore, { autoplay } from 'swiper';
 
 export default function Banner() {
-  const images = ["/8.jpg", "/6.jpg", "/3.jpg", "/7.jpg"];
+  const images = ["/9.jpg", "/10.jpg", "/7.jpg", "/3.jpg"];
   const imageText = ["Hello", "Shelly", "Shoval", "Nagger"]; // Added text for each image
   SwiperCore.use([Autoplay]);
 
@@ -29,7 +29,7 @@ export default function Banner() {
         >
           {images.map((img, index) => (
             <SwiperSlide key={index} className="min-w-full h-full flex-none relative"> 
-              <img src={img} className="w-full h-full object-scale-down sm:object-cover" alt={`Banner ${index + 1}`} />
+              <img src={img} className="w-full h-full object-cover sm:object-cover" alt={`Banner ${index + 1}`} />
               <div className="absolute inset-0 flex items-center justify-center">
                 <h1 className="text-4xl text-white">{imageText[index]}</h1>
               </div>
