@@ -1,10 +1,12 @@
-'use client'
+'use client';
 import React, { useEffect, useRef } from 'react';
 
 export default function ScrollingImage(params) {
   const h1Ref = useRef(null);
 
   useEffect(() => {
+    const element = h1Ref.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -18,20 +20,20 @@ export default function ScrollingImage(params) {
       }
     );
 
-    if (h1Ref.current) {
-      observer.observe(h1Ref.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (h1Ref.current) {
-        observer.unobserve(h1Ref.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
-  }, []);
+  }, []); // Empty dependency array ensures this runs once when the component mounts.
 
   return (
     <div className="flex min-h-[600px] justify-center items-center bg-fixed bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(/${params.image})` }}>
-      <h1 ref={h1Ref} className='font-black text-white text-6xl'>Hello</h1>
+      <h1 ref={h1Ref} className='font-black text-white text-sm sm:text-md md:text-xl lg:text-3xl'>Hello</h1>
     </div>
   );
 }
