@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import "../globals.css";
 
 export default function Contact() {
@@ -19,7 +19,7 @@ export default function Contact() {
 
     const body = { name, email, message };
 
-    const response = await fetch("/api/send-mail", {
+    const response = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
@@ -90,7 +90,7 @@ export default function Contact() {
 
         {submitSuccess && (
           <div className="text-center text-green-500 mt-2 sm:mt-4" role="alert">
-            Message sent successfully!
+            Message sent successfully! &#40;check your spam folder&#41;
           </div>
         )}
         {submitError && (

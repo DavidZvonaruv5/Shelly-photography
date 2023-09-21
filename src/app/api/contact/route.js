@@ -17,8 +17,8 @@ export async function POST(request) {
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: 'davidze99@gmail.com',
-        subject: 'New message from My Portfolio',
+        to: 'shelly.shoval@gmail.com',
+        subject: 'New message from My Photography Website',
         text: `
       Name: ${reqbody['name']}
       Email: ${reqbody['email']}
@@ -30,7 +30,7 @@ export async function POST(request) {
         to: reqbody['email'],
         subject: `Thank you for contacting me ${reqbody['name']}!`,
         text: `
-      I will get back to you as soon as possible, David.
+      I will get back to you as soon as possible, Shelly Shoval.
     `
     };
 

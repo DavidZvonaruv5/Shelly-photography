@@ -27,6 +27,7 @@ export default function Banner() {
           slidesPerView={1}
           navigation
           loading="lazy"
+          sizes="100vw"
           autoplay={{
             delay: 5000,
           }}
@@ -40,13 +41,19 @@ export default function Banner() {
               key={index}
               className="min-w-full h-full flex-none relative"
             >
-              <Image
-                src={img}
-                width={1920}
-                height={1080}
-                className="w-full h-full object-cover sm:object-cover"
-                alt={`Banner ${index + 1}`}
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  src={img}
+                  width={900}
+                  height={900}
+                  decoding="async"
+                  fetchPriority="high"
+                  priority
+                  className="w-full h-full object-cover sm:object-cover"
+                  alt={`Banner ${index + 1}`}
+                />
+              </div>
+
               <div className="absolute inset-0 flex items-center justify-center">
                 <h1 className="text-4xl text-white">{imageText[index]}</h1>
               </div>
