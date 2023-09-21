@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Hamburger from "./Hamburger";
+import { FaPhoneAlt, FaInstagram } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +36,10 @@ export default function Navbar() {
           >
             <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
           </button>
+
           <ul className="flex flex-col space-y-4 mr-[40px]">
             <li>
-              <Link href="#about">
+              <Link href="/#about">
                 <span
                   onClick={() => {
                     setIsOpen(false);
@@ -58,11 +60,40 @@ export default function Navbar() {
                 </span>
               </Link>
             </li>
+            <li>
+              <a
+                href="tel:1234567890"
+                className="cursor-pointer flex hover:text-gray-300 text-xl"
+              >
+                <FaPhoneAlt className="mr-2" /> Call Me
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/shelly1237"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:text-gray-300 text-xl"
+              >
+                <FaInstagram className="text-2xl" />
+              </a>
+            </li>
           </ul>
         </div>
+
         <ul className="hidden lg:flex lg:space-x-6 lg:justify-end">
           <li>
-            <Link href="#about">
+            <a
+              href="https://www.instagram.com/shelly1237"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer hover:text-gray-300 text-xl"
+            >
+              <FaInstagram className="text-2xl" />
+            </a>
+          </li>
+          <li>
+            <Link href="/#about">
               <span
                 onClick={() => {}}
                 className="cursor-pointer hover:text-gray-300 text-xl"
