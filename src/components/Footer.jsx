@@ -9,7 +9,7 @@ export default function Footer() {
         <a href="#home">HOME</a>
         <a href="#about">ABOUT</a>
         <a href="#services">SERVICES</a>
-        <a href="#contact">CONTACT</a>
+        <a href="/contact">CONTACT</a>
       </div>
       <hr className="w-full border-white my-8" />
       <div className="text-xs sm:text-sm">

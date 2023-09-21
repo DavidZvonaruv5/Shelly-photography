@@ -17,3 +17,12 @@
 .animate-fade-in-up {
     animation: fade-in-up 1s ease-out forwards;
 }
+
+@media (max-width: 1023px) {
+    .custom-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }

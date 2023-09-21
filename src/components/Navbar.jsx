@@ -1,7 +1,7 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Hamburger from "./Hamburger"; 
+import Hamburger from "./Hamburger";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,13 +10,14 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
- 
-
   return (
-    <nav className="bg-black text-white py-2 w-full  inset-x-0 top-0 z-50">
+    <nav className="bg-black text-white py-2 w-full z-50 custom-navbar">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
         <Link href="/">
-          <div className="text-xl lg:text-3xl font-bold cursor-pointer flex-shrink-0 lg:ml-4">
+          <div
+            id="home"
+            className="text-xl lg:text-3xl font-bold cursor-pointer flex-shrink-0 lg:ml-4"
+          >
             Shelly Shoval
           </div>
         </Link>
@@ -28,15 +29,17 @@ export default function Navbar() {
             isOpen ? "translate-x-0 h-[100%]" : "translate-x-full"
           } lg:hidden flex items-center justify-center`}
         >
-          <button onClick={toggleMenu} className="absolute top-2 right-2 text-white text-3xl">
-            <Hamburger  isOpen={isOpen} toggleMenu={toggleMenu}/>
+          <button
+            onClick={toggleMenu}
+            className="absolute top-2 right-2 text-white text-3xl"
+          >
+            <Hamburger isOpen={isOpen} toggleMenu={toggleMenu} />
           </button>
           <ul className="flex flex-col space-y-4 mr-[40px]">
             <li>
-              <Link href="/#Aboutme">
+              <Link href="#about">
                 <span
                   onClick={() => {
-                   
                     setIsOpen(false);
                   }}
                   className="cursor-pointer hover:text-gray-300 text-xl"
@@ -46,7 +49,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/#contact">
+              <Link href="/contact">
                 <span
                   onClick={() => setIsOpen(false)}
                   className="cursor-pointer hover:text-gray-300 text-xl"
@@ -59,11 +62,9 @@ export default function Navbar() {
         </div>
         <ul className="hidden lg:flex lg:space-x-6 lg:justify-end">
           <li>
-            <Link href="/#Aboutme">
+            <Link href="#about">
               <span
-                onClick={() => {
-
-                }}
+                onClick={() => {}}
                 className="cursor-pointer hover:text-gray-300 text-xl"
               >
                 About
@@ -71,7 +72,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href={`/contact`}>
+            <Link href="/contact">
               <span className="cursor-pointer hover:text-gray-300 text-xl">
                 Contact me
               </span>
