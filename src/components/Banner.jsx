@@ -1,10 +1,17 @@
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import SwiperCore, { autoplay } from 'swiper';
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import SwiperCore from "swiper";
+import Image from "next/image";
 
 export default function Banner() {
   const images = ["/9.jpg", "/10.jpg", "/7.jpg", "/3.jpg"];
@@ -19,17 +26,27 @@ export default function Banner() {
           spaceBetween={50}
           slidesPerView={1}
           navigation
+          loading="lazy"
           autoplay={{
-            delay: 5000
+            delay: 5000,
           }}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
+          onSlideChange={() => console.log("slide change")}
         >
           {images.map((img, index) => (
-            <SwiperSlide key={index} className="min-w-full h-full flex-none relative"> 
-              <img src={img} className="w-full h-full object-cover sm:object-cover" alt={`Banner ${index + 1}`} />
+            <SwiperSlide
+              key={index}
+              className="min-w-full h-full flex-none relative"
+            >
+              <Image
+                src={img}
+                width={1920}
+                height={1080}
+                className="w-full h-full object-cover sm:object-cover"
+                alt={`Banner ${index + 1}`}
+              />
               <div className="absolute inset-0 flex items-center justify-center">
                 <h1 className="text-4xl text-white">{imageText[index]}</h1>
               </div>
